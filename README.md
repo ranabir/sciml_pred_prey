@@ -21,8 +21,15 @@ where:
 - $\gamma$ is the natural death rate of predators in the absence of prey.
 - $\delta$ is the rate at which predators increase by consuming prey.
 
+### Plot:
+  <img width="500" alt="image" src="https://github.com/user-attachments/assets/9832d203-5f0f-44d5-a560-c43f2fecb11c">
+
+### Dynamics:
 1. When prey is abundant, predators have plenty to eat, leading to an increase in the predator population.
 2. As the predator population grows, it consumes more prey, leading to a decrease in the prey population.
 3. With fewer prey available, the predator population starts to decline due to starvation.
 4. As the predator population decreases, the prey population begins to recover, starting the cycle anew.
+
+   
+
 
