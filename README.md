@@ -30,6 +30,9 @@ where:
 3. With fewer prey available, the predator population starts to decline due to starvation.
 4. As the predator population decreases, the prey population begins to recover, starting the cycle anew.
 
+### Code Files:
+The Lotka_Volterra_Model.jl files contains synthetic data(noiseless) using Lotka-Volterra model 
+
    
 
 
