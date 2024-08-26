@@ -40,11 +40,11 @@ Using Adam Optimizer to optimize
 ### Forecast: 
 Purpose: The forecasting part is intended to use the trained neural ODE model to predict future states of the system beyond the time range it was originally trained on.
 Steps:
-- Define an extended time span for prediction.
-- Specify the time points for which predictions are needed.
-- Create a neural ODE object configured for forecasting.
-- Run the neural ODE to generate forecasts using the optimized model parameters.
-- Visualize both the training and forecasted data to compare model predictions against actual data and observe expected future behavior.
+- Defined an extended time span for prediction.
+- Specified the time points for which predictions are needed.
+- Created a neural ODE object configured for forecasting.
+- Ran the neural ODE to generate forecasts using the optimized model parameters.
+- Plotted both the training and forecasted data to compare model predictions against actual data and observe expected future behavior.
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/fd5cd3c5-12a8-4b72-902f-cd5e0feedaee">
 
