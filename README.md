@@ -49,7 +49,7 @@ Steps:
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/fd5cd3c5-12a8-4b72-902f-cd5e0feedaee">
 
 ### Code Files:
-The Lotka_Volterra_Model.jl files contains synthetic data(noiseless) using Lotka-Volterra model 
+The Lotka_Volterra_Model.jl files contains synthetic data(noiseless) using Lotka-Volterra model, application of Neural ODE and forecasting
 
    
 
