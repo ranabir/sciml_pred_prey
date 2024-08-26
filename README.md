@@ -34,6 +34,9 @@ where:
 Using true data from the above and then fitting Neural ODE to fit the data
 Using Adam Optimizer to optimize
 
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/63094ad3-057c-4983-af69-b21b5fb27179">
+
+
 ### Forecast: 
 Purpose: The forecasting part is intended to use the trained neural ODE model to predict future states of the system beyond the time range it was originally trained on.
 Steps:
