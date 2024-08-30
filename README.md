@@ -40,6 +40,12 @@ where:
    - 4 layers (including input and output layer)
    - Adam Optimizer with maximum iterations of 500 and learning rate of 0.001
    - BFGS Optimizer with maximum iterations of 100 and learning rate of 0.01
+3. The **Lotka_Volterra_Model_forecast.jl** file contains the forecasting breakdown case scenarios:
+   - 90% training data
+   - 70% training data
+   - 50% training data
+   - 30% training data
+   - 10% training data
 
 ### Neural ODE 
 Using true data from the above and then fitting Neural ODE to fit the data
