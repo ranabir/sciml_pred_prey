@@ -93,6 +93,11 @@ Steps:
 
 <img width="500" alt="lotka_volterra_forecast_30_70" src="https://github.com/user-attachments/assets/1ac45e2c-9861-46c0-9ce8-6e3e6ffe6e81">
 
+### Case 4: Training Neural ODE with 10% data and forecasting on remaining 90% 
+
+<img width="500" alt="lotka_volterra_forecast_10_90" src="https://github.com/user-attachments/assets/5d7ff1e3-a42c-4097-9e04-91e469f5b240">
+
+
 
 
 
