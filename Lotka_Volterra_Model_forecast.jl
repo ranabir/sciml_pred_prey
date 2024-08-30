@@ -127,8 +127,10 @@ function train_and_forecast(train_fraction, y_train, t_train, dudt, u0, st)
 end
 
 # Different training scenarios
-#train_and_forecast(0.9, y_train, t, dudt, u0, st)  # Train on 90%, forecast on 10%
-train_and_forecast(0.75, y_train, t, dudt, u0, st)  # Train on 75%, forecast on 25%
+train_and_forecast(0.9, y_train, t, dudt, u0, st)  # Train on 90%, forecast on 10%
+train_and_forecast(0.75, y_train, t, dudt, u0, st)  # Train on 70%, forecast on 30%
 train_and_forecast(0.5, y_train, t, dudt, u0, st)  # Train on 50%, forecast on 50%
-train_and_forecast(0.3, y_train, t, dudt, u0, st)  # Train on 30%, forecast on 70%
-train_and_forecast(0.1, y_train, t, dudt, u0, st)  # Train on 30%, forecast on 70%
+train_and_forecast(0.4, y_train, t, dudt, u0, st)  # Train on 40%, forecast on 60%
+train_and_forecast(0.35, y_train, t, dudt, u0, st)  # Train on 35%, forecast on 65%
+train_and_forecast(0.30, y_train, t, dudt, u0, st)  # Train on 30%, forecast on 70%
+train_and_forecast(0.1, y_train, t, dudt, u0, st)  # Train on 10%, forecast on 90%
