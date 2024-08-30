@@ -65,9 +65,21 @@ Steps:
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/fd5cd3c5-12a8-4b72-902f-cd5e0feedaee">
 
-
-
 **After Further Optimization with BFGS and rbf activation function :**
 
 <img width="500" alt="lotka_volterra_forecast_optimized" src="https://github.com/user-attachments/assets/5e47e50b-e1af-4f07-8d08-c68de540f4ea">
+
+
+## Forecast Break Down Point: 
+### Case 1: Training Neural ODE with 90% data and forecasting on remaining 10% 
+
+<img width="500" alt="lotka_volterra_forecast_90_10" src="https://github.com/user-attachments/assets/cddd8d51-d586-4103-92c5-a739498e59cf">
+
+
+
+
+
+
+
+
 
