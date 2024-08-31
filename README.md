@@ -99,8 +99,7 @@ Steps:
 
 ### Case 5: Revised Plot: Training Neural ODE with 35% data and forecasting on remaining 65% 
 
-<img width="500" alt="lotka_volterra_forecast_35_65_revised" src="https://github.com/user-attachments/assets/9cd9d4d1-332d-435a-9722-b744732b10db">
-
+<img width="500" alt="lotka_volterra_forecast_35_65_revised1" src="https://github.com/user-attachments/assets/2b8a2e7c-c1fa-4c31-b609-01700c0e12f6">
 
 ### Case 6: Training Neural ODE with 30% data and forecasting on remaining 70% 
 
