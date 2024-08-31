@@ -87,7 +87,7 @@ function train_and_forecast(train_fraction, y_train, t_train, dudt, u0, st)
     
     # First optimization run using Adam optimizer
     iteration = 0
-    result_neuralode = Optimization.solve(optprob, OptimizationOptimisers.Adam(0.001), maxiters=500, callback = (p, l, pred) -> begin
+    result_neuralode = Optimization.solve(optprob, OptimizationOptimisers.Adam(0.001), maxiters=200, callback = (p, l, pred) -> begin
         iteration += 1
         callback(p, l, pred, iteration=iteration, opt_method="Adam")
     end)
@@ -98,7 +98,7 @@ function train_and_forecast(train_fraction, y_train, t_train, dudt, u0, st)
     res2 = Optimization.solve(optprob2, Optim.BFGS(initial_stepnorm=0.01), callback = (p, l, pred) -> begin
         iteration += 1
         callback(p, l, pred, iteration=iteration, opt_method="BFGS")
-    end, maxiters=50)
+    end, maxiters=20)
     
     # Forecasting with the trained neural ODE model
     tspan_forecast = (t_train_partial[1], t_train[end])
@@ -112,25 +112,27 @@ function train_and_forecast(train_fraction, y_train, t_train, dudt, u0, st)
 
     # Plot the training and forecasting results with deviation
     plt = plot(
-        t_train_partial, y_train[1, 1:n_train], label="Prey (Training)", xlabel="Time", ylabel="Population", 
-        linestyle=:solid, linewidth=4, color=:blue
+        t_train_partial, y_train[1, 1:n_train], label="Ground truth training (prey)", xlabel="Time", ylabel="Population", 
+        linestyle=:solid, linewidth=4, color=:red , legendfontsize=6
     )
-    plot!(plt, t_train_partial, y_train[2, 1:n_train], label="Predators (Training)", linestyle=:solid, linewidth=4, color=:red)
-    plot!(plt, t_train[n_train:end], forecasted_sol[1, n_train:end], label="Prey (Forecasted)", linestyle=:dash, linewidth=4, color=:blue)
-    plot!(plt, t_train[n_train:end], forecasted_sol[2, n_train:end], label="Predators (Forecasted)", linestyle=:dash, linewidth=4, color=:red)
+    plot!(plt, t_train_partial, y_train[2, 1:n_train], label="Ground truth training (predator)", linestyle=:solid, linewidth=4, color=:blue, legendfontsize=6)
+    plot!(plt, t_train[n_train:end], y_train[1, n_train:end], label="Ground truth forecasting (prey)", linestyle=:solid, linewidth=0.5, color=:red, legendfontsize=6)
+    plot!(plt, t_train[n_train:end], y_train[2, n_train:end], label="Ground truth forecasting (predator)", linestyle=:solid, linewidth=0.5, color=:blue, legendfontsize=6)
+    plot!(plt, t_train[n_train:end], forecasted_sol[1, n_train:end], label="Neural ODE prediction + forecasting (prey)", linestyle=:dash, linewidth=4, color=:red, legendfontsize=6)
+    plot!(plt, t_train[n_train:end], forecasted_sol[2, n_train:end], label="Neural ODE prediction + forecasting (predator)", linestyle=:dash, linewidth=4, color=:blue, legendfontsize=6)
     
     # Plot deviations as shaded areas
-    plot!(plt, t_train[n_train:end], y_train[1, n_train:end], ribbon=forecast_deviation_prey, fillalpha=0.3, label="Prey Deviation", color=:blue)
-    plot!(plt, t_train[n_train:end], y_train[2, n_train:end], ribbon=forecast_deviation_predator, fillalpha=0.3, label="Predator Deviation", color=:red)
+    plot!(plt, t_train[n_train:end], y_train[1, n_train:end], ribbon=forecast_deviation_prey, fillalpha=0.1, color=:red ,label=false)
+    plot!(plt, t_train[n_train:end], y_train[2, n_train:end], ribbon=forecast_deviation_predator, fillalpha=0.1, color=:blue , label=false)
     
     display(plt)
 end
 
 # Different training scenarios
 train_and_forecast(0.9, y_train, t, dudt, u0, st)  # Train on 90%, forecast on 10%
-train_and_forecast(0.75, y_train, t, dudt, u0, st)  # Train on 70%, forecast on 30%
+train_and_forecast(0.75, y_train, t, dudt, u0, st)  # Train on 75%, forecast on 25%
 train_and_forecast(0.5, y_train, t, dudt, u0, st)  # Train on 50%, forecast on 50%
 train_and_forecast(0.4, y_train, t, dudt, u0, st)  # Train on 40%, forecast on 60%
 train_and_forecast(0.35, y_train, t, dudt, u0, st)  # Train on 35%, forecast on 65%
-train_and_forecast(0.30, y_train, t, dudt, u0, st)  # Train on 30%, forecast on 70%
+train_and_forecast(0.3, y_train, t, dudt, u0, st)  # Train on 30%, forecast on 70%
 train_and_forecast(0.1, y_train, t, dudt, u0, st)  # Train on 10%, forecast on 90%
