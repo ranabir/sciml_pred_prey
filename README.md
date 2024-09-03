@@ -59,6 +59,21 @@ Using Adam Optimizer to optimize:
 
 <img width="500" alt="lotka_volterra_optimized_fit_rbf_bfgs" src="https://github.com/user-attachments/assets/fa44ccda-468f-4ccc-ab5a-fa63900d757c">
 
+## Hyperparameter Tuning Plots
+
+### Loss Variation with Different Activation Functions
+
+<img width="500" alt="Loss Variation with Activation Functions" src="https://github.com/user-attachments/assets/38c511fa-0b6c-450a-b434-393739f69a11">
+
+### Loss Variation with Different Number of Hidden Units
+
+<img width="500" alt="Loss Variation with Different Number of Hidden Units" src="https://github.com/user-attachments/assets/ca4cf3d7-b61a-4282-89ba-b920652b254d">
+
+### Loss Variation with Different Adam Step Sizes
+
+<img width="500" alt="Loss Variation with Different Adam Step Sizes" src="https://github.com/user-attachments/assets/d72a7516-4271-4515-a867-8318776b7329">
+
+
 
 ### Forecast: 
 Purpose: The forecasting part is intended to use the trained neural ODE model to predict future states of the system beyond the time range it was originally trained on.
@@ -108,6 +123,9 @@ Steps:
 ### Case 7: Training Neural ODE with 10% data and forecasting on remaining 90% 
 
 <img width="500" alt="lotka_volterra_forecast_10_90" src="https://github.com/user-attachments/assets/5d7ff1e3-a42c-4097-9e04-91e469f5b240">
+
+
+
 
 
 
