@@ -61,18 +61,17 @@ Using Adam Optimizer to optimize:
 
 ## Hyperparameter Tuning Plots
 
-### Loss Variation with Different Activation Functions
+### Logarithmic Loss Variation with Different Activation Functions
 
-<img width="500" alt="Loss Variation with Activation Functions" src="https://github.com/user-attachments/assets/38c511fa-0b6c-450a-b434-393739f69a11">
+<img width="500" alt="Log Loss Variation with Activation Functions" src="https://github.com/user-attachments/assets/5d3071a7-149c-4c82-aa3c-00f27c78263a">
 
 ### Loss Variation with Different Number of Hidden Units
 
 <img width="500" alt="Loss Variation with Different Number of Hidden Units" src="https://github.com/user-attachments/assets/ca4cf3d7-b61a-4282-89ba-b920652b254d">
 
-### Loss Variation with Different Adam Step Sizes
+### Logarithmic Loss Variation with Different Adam Step Sizes
 
-<img width="500" alt="Loss Variation with Different Adam Step Sizes" src="https://github.com/user-attachments/assets/d72a7516-4271-4515-a867-8318776b7329">
-
+<img width="500" alt="Log Loss Variation with Adam Step Sizes" src="https://github.com/user-attachments/assets/7f019f41-22b0-4d14-9e71-02efa3deec3b">
 
 
 ### Forecast: 
