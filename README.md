@@ -63,7 +63,8 @@ Using Adam Optimizer to optimize:
 
 ### Logarithmic Loss Variation with Different Activation Functions
 
-<img width="500" alt="Log Loss Variation with Activation Functions" src="https://github.com/user-attachments/assets/5d3071a7-149c-4c82-aa3c-00f27c78263a">
+<img width="500" alt="Log 10 Loss Variation with Activation Functions" src="https://github.com/user-attachments/assets/2e0859eb-d10c-4cf2-934f-22d813ece501">
+
 
 ### Loss Variation with Different Number of Hidden Units
 
