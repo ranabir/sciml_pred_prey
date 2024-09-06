@@ -197,7 +197,8 @@ for (name, act_fn) in activations
 end
 
 # Plotting loss variation with different activation functions
-plt = plot()
+#plt = plot()
+plt = plot(yscale=:log)
 for (name, loss_history) in loss_data_activations
     plot!(plt, 1:length(loss_history), loss_history, label=name)
 end
@@ -251,7 +252,8 @@ for step_size in step_sizes
 end
 
 # Plotting loss variation with different step sizes
-plt = plot()
+#plt = plot()
+plt = plot(yscale=:log)
 for (name, loss_history) in loss_data_step_sizes
     plot!(plt, 1:length(loss_history), loss_history, label=name)
 end
