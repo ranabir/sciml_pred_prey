@@ -94,7 +94,7 @@ Steps:
 ## Forecast Break Down Point: 
 ### Case 1: Training Neural ODE with 90% data and forecasting on remaining 10% 
 
-<img width="500" alt="lotka_volterra_forecast_90_10" src="https://github.com/user-attachments/assets/cddd8d51-d586-4103-92c5-a739498e59cf">
+<img width="500" alt="lotka_volterra_forecast_90_10_revised" src="https://github.com/user-attachments/assets/c2d687a8-2a75-4b94-9a6c-ff676686b843">
 
 ### Case 2: Training Neural ODE with 70% data and forecasting on remaining 30% 
 
