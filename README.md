@@ -102,15 +102,11 @@ Steps:
 
 ### Case 3: Training Neural ODE with 50% data and forecasting on remaining 50% 
 
-<img width="500" alt="lotka_volterra_forecast_50_50" src="https://github.com/user-attachments/assets/118c2912-646e-484e-bc36-b678b3ae1a9c">
+<img width="500" alt="lotka_volterra_forecast_50_50_revised" src="https://github.com/user-attachments/assets/76961685-4ba8-4b74-856c-2ab4b832b789">
 
 ### Case 4: Training Neural ODE with 40% data and forecasting on remaining 60% 
 
-<img width="500" alt="lotka_volterra_forecast_40_60" src="https://github.com/user-attachments/assets/5e081ec3-06b3-4bbd-b57f-fa81710d371d">
-
-### Case 5: Training Neural ODE with 35% data and forecasting on remaining 65% 
-
-<img width="500" alt="lotka_volterra_forecast_35_65" src="https://github.com/user-attachments/assets/ff2ae49d-6e66-469b-95ea-862663cde2c1">
+<img width="500" alt="lotka_volterra_forecast_40_50_revised" src="https://github.com/user-attachments/assets/d009e436-2181-4290-9ddc-dbbfc460a4b5">
 
 ### Case 5: Revised Plot: Training Neural ODE with 35% data and forecasting on remaining 65% 
 
@@ -118,7 +114,7 @@ Steps:
 
 ### Case 6: Training Neural ODE with 30% data and forecasting on remaining 70% 
 
-<img width="500" alt="lotka_volterra_forecast_30_70" src="https://github.com/user-attachments/assets/1ac45e2c-9861-46c0-9ce8-6e3e6ffe6e81">
+<img width="500" alt="lotka_volterra_forecast_30_70_revised" src="https://github.com/user-attachments/assets/8765e1be-2886-4614-a594-b9faa5a2d11e">
 
 ### Case 7: Training Neural ODE with 10% data and forecasting on remaining 90% 
 
