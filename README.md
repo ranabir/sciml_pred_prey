@@ -30,6 +30,7 @@ where:
 3. With fewer prey available, the predator population starts to decline due to starvation.
 4. As the predator population decreases, the prey population begins to recover, starting the cycle anew.
 
+
 ### Code Files:
 1. The Lotka_Volterra_Model.jl files contains synthetic data(noiseless) using Lotka-Volterra model, application of Neural ODE and forecasting using
    - relu activation function
@@ -51,6 +52,7 @@ where:
 Using true data from the above and then fitting Neural ODE to fit the data
 Using Adam Optimizer to optimize:
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/63094ad3-057c-4983-af69-b21b5fb27179"> 
+
 
 
 
@@ -122,7 +124,53 @@ Steps:
 
 
 
+## UDE
+The generated data for the prey and predator populations over a time span of 10 units is then used to train a UDE model. The UDE incorporates neural networks to learn the unknown interaction terms in the Lotka-Volterra equations. Specifically, we treat the interaction terms $\beta xy$ and $\delta xy$ as functions that can be learned from data using neural networks.
+UDE Construction
+In this implementation:
 
+The learned system using neural networks is described as:
+
+$$
+\begin{cases}
+\frac{dx}{dt} = \alpha x - \text{NN}_1(x, y) \\
+\frac{dy}{dt} = -\gamma y + \text{NN}_2(x, y)
+\end{cases}
+$$
+
+Where:
+- $\text{NN}_1(x, y)$ is a neural network that approximates the interaction term $\beta xy$.
+- $\text{NN}_2(x, y)$ is a neural network that approximates the interaction term $\delta xy$.
+
+Two neural networks (NN1 and NN2) model the interaction terms $\beta xy$ and $\delta xy$ respectively.
+These networks are trained to minimize the loss between the generated data and the predicted populations.
+
+### Optimization Strategy
+To train the UDE, the following optimization process is used:
+
+Adam Optimizer: The UDE is first trained using the Adam optimizer with a learning rate of 0.001 over 20,000 iterations.
+RMSProp Optimizer: The model is then fine-tuned using RMSProp with a learning rate of 0.001 and momentum ρ = 0.9 for 5,000 iterations.
+
+
+### Neural Network Architecture
+Most importantly in UDE it works perfectly with shallow networks 
+
+The neural networks $\text{NN}_1$ and $\text{NN}_2$ are constructed using the `Lux` library in the following architecture:
+
+```julia
+NN1 = Lux.Chain(
+    Lux.Dense(2, 10, relu),
+    Lux.Dense(10, 10, relu),
+    Lux.Dense(10, 10, relu),
+    Lux.Dense(10, 1)
+)
+
+NN2 = Lux.Chain(
+    Lux.Dense(2, 10, relu),
+    Lux.Dense(10, 10, relu),
+    Lux.Dense(10, 10, relu),
+    Lux.Dense(10, 1)
+)
 
 
 
