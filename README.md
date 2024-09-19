@@ -151,6 +151,9 @@ To train the UDE, the following optimization process is used:
 Adam Optimizer: The UDE is first trained using the Adam optimizer with a learning rate of 0.001 over 20,000 iterations.
 RMSProp Optimizer: The model is then fine-tuned using RMSProp with a learning rate of 0.001 and momentum ρ = 0.9 for 5,000 iterations.
 
+### Optimized Fitted Data: 
+<img width="500" alt="shallow_network_fit" src="https://github.com/user-attachments/assets/c0b92ba3-d3a5-4116-ac24-7f99368423cf">
+
 
 ### Neural Network Architecture
 Most importantly in UDE it works perfectly with shallow networks 
@@ -171,11 +174,16 @@ NN2 = Lux.Chain(
     Lux.Dense(10, 10, relu),
     Lux.Dense(10, 1)
 )
+```
 
+### Results
+The final trained UDE model is used for forecasting the population dynamics over a longer time span of 20 units. The results show that the neural network accurately captures the cyclical behavior of the predator-prey dynamics. The predictions are visualized alongside the original data for comparison.
 
+### Visualization
+The following plot shows the learned dynamics:
 
+The solid lines represent the generated data for the prey and predator populations.
+The dashed lines show the UDE model's predictions for both populations over the forecasting period.
+The model accurately predicts the oscillations in prey and predator populations, indicating the successful learning of the interaction dynamics.
 
-
-
-
-
+![Screenshot 2024-09-19 154524](https://github.com/user-attachments/assets/f24edc15-2351-44a2-bfa6-fc5e6258bf97)
