@@ -144,15 +144,6 @@ res_rmsprop = Optimization.solve(optprob2, OptimizationOptimisers.RMSProp(η, ρ
     callback(p, l, predict_ude(p), iteration=iteration[], opt_method="RMSProp")
 end, maxiters=5000)
 
-
-optprob3 = Optimization.OptimizationProblem(optf, ComponentArray(res_rmsprop.minimizer))
-
-res_lbfgs = Optimization.solve(optprob2, Optim.LBFGS(), callback = (p, l) -> begin
-    iteration[] += 1
-    callback(p, l, predict_ude(p), iteration=iteration[], opt_method="LBFGS")
-end, maxiters=50, allow_f_increases = false)
-
-
 # Forecasting with the trained UDE model
 t_forecast = range(0.0, 20.0, length=201)
 prob_forecast = ODEProblem{true}(ude_system!, u0, (0.0, 20.0))
