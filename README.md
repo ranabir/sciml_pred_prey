@@ -47,6 +47,7 @@ where:
    - 50% training data
    - 30% training data
    - 10% training data
+4. The **UDE/Lotka_Volterra_UDE_shallow.jl** file contains optimized model fit code for UDE system
 
 ### Neural ODE 
 Using true data from the above and then fitting Neural ODE to fit the data
