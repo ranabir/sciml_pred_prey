@@ -186,4 +186,5 @@ The solid lines represent the generated data for the prey and predator populatio
 The dashed lines show the UDE model's predictions for both populations over the forecasting period.
 The model accurately predicts the oscillations in prey and predator populations, indicating the successful learning of the interaction dynamics.
 
-![Screenshot 2024-09-19 154524](https://github.com/user-attachments/assets/f24edc15-2351-44a2-bfa6-fc5e6258bf97)
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/0e742ad7-7c4c-41b2-849c-e3189926c2ed">
+
