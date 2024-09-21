@@ -208,8 +208,7 @@ The UDE model is trained on lesser data (% of original time plan) and forecasted
 
 <img width="500" alt="forecast ude 0 3" src="https://github.com/user-attachments/assets/4a59d287-1123-42b9-a773-65b551686a8a">
 
-
-
+It looks like UDE tends to overfit the data.  
 
 
 
