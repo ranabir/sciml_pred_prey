@@ -1,7 +1,7 @@
 using JLD, Lux, DiffEqFlux, DifferentialEquations, Optimization, OptimizationOptimJL, Random, Plots, OptimizationOptimisers
 using ComponentArrays, OptimizationOptimisers
 
-# Generate data using the Lotka-Volterra Predator-Prey Model
+# Generated data using the Lotka-Volterra Predator-Prey Model
 
 α = 1.5
 β = 1.0
@@ -21,7 +21,7 @@ function lotka_volterra!(du, u, p, t)
     du[2] = -δ * y + γ * x * y  # Predators
 end
 
-# Solve ODE problem to generate data
+# ODE problem to generate data
 prob = ODEProblem(lotka_volterra!, u0, tspan)
 sol = Array(solve(prob, Tsit5(), u0=u0, saveat=t))
 
@@ -183,15 +183,15 @@ function train_and_forecast_with_ratio(train_ratio)
     plot!(plt, t_forecast_partial, forecasted_sol[1, :], label="Neural ODE prediction + forecasting (prey)", linestyle=:dash, linewidth=4, color=:red, legendfontsize=6)
     plot!(plt, t_forecast_partial, forecasted_sol[2, :], label="Neural ODE prediction + forecasting (predator)", linestyle=:dash, linewidth=4, color=:blue, legendfontsize=6)
     
-    # Plot deviations as shaded areas
+    # Plotting deviations as shaded areas
     plot!(plt, t_forecast_partial, Prey_Data[n_train:end], ribbon=forecast_deviation_prey, fillalpha=0.1, color=:red ,label=false)
     plot!(plt, t_forecast_partial, Predator_Data[n_train:end], ribbon=forecast_deviation_predator, fillalpha=0.1, color=:blue , label=false)
     
-    # Display the plot
+    # Displaying the Finalplot
     display(plt)
 end
 
-# Now you can call `train_and_forecast_with_ratio` for different training ratios like this:
+# Forecasting and finding Breakdown-Point with `train_and_forecast_with_ratio` for different training ratios :
  train_and_forecast_with_ratio(0.9)
  train_and_forecast_with_ratio(0.7)
  train_and_forecast_with_ratio(0.5)
