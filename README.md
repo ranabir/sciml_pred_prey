@@ -189,3 +189,28 @@ The model accurately predicts the oscillations in prey and predator populations,
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/0e742ad7-7c4c-41b2-849c-e3189926c2ed">
 
+### Forecasting 
+The UDE model is trained on lesser data (% of original time plan) and forecasted on remaining part to find the forecasting breakdown point 
+
+### Case 1: Training Neural ODE with 90% data and forecasting on remaining 10% 
+
+<img width="500" alt="forecast ude 0 9" src="https://github.com/user-attachments/assets/198aefc2-c9f1-45ec-903a-43cf3b4f3b05">
+
+### Case 2: Training Neural ODE with 70% data and forecasting on remaining 30% 
+
+<img width="500" alt="forecast ude 0 7" src="https://github.com/user-attachments/assets/c0c5e2c7-fdae-4ddb-bda6-d05e299a76fe">
+
+### Case 3: Training Neural ODE with 50% data and forecasting on remaining 50% 
+
+<img width="500" alt="forecast ude 0 5" src="https://github.com/user-attachments/assets/e71054cc-a6cb-4fc7-b6a1-93bd2abeb510">
+
+### Case 3: Training Neural ODE with 30% data and forecasting on remaining 70% 
+
+<img width="500" alt="forecast ude 0 3" src="https://github.com/user-attachments/assets/4a59d287-1123-42b9-a773-65b551686a8a">
+
+
+
+
+
+
+
