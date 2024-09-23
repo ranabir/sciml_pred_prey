@@ -202,6 +202,11 @@ The UDE model is trained on lesser data (% of original time plan) and forecasted
 
 In addition to it, we observed the UDE trains well with even shallower neural network of 5 neurons of 3 layers whereas for Neural ODE for the same data point we used 100 neurons and 5 layers
 
+### Forecasting on further timestamps 
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/28e5d59c-e03a-417c-9557-263cae14347d">
+
+
+
 We went ahead with 33% training data and found although it was able to capture the underlying data it started deviating 
 
 ### Case: Training Neural ODE with 33% data and forecasting on remaining 67% 
