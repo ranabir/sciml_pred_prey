@@ -202,7 +202,7 @@ The UDE model is trained on lesser data (% of original time plan) and forecasted
 
 In addition to it, we observed the UDE trains well with even shallower neural network of 5 neurons of 3 layers whereas for Neural ODE for the same data point we used 100 neurons and 5 layers
 
-### Forecasting on further timestamps 
+### Forecasting on further timestamps till 30 timesteps with training on just 3.5 timesteps
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/28e5d59c-e03a-417c-9557-263cae14347d">
 
 
