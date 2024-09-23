@@ -197,7 +197,13 @@ Whereas in case of UDE for the same 0.35% training data, the model is able to ca
 ### Case: Training Neural ODE with 35% data and forecasting on remaining 65% 
 <img width="500" alt="forecast ude 0 35 trial 2" src="https://github.com/user-attachments/assets/797b7131-3ba7-49cc-9988-8a22fc72f634">
 
-In addition to it, the UDE trains well with even shallower neural network of 5 neurons of 3 layers
+In addition to it, we observed the UDE trains well with even shallower neural network of 5 neurons of 3 layers whereas for Neural ODE for the same data point we used 100 neurons and 5 layers
+
+We went ahead with 33% training data and found although it was able to capture the underlying data it started deviating 
+
+### Case: Training Neural ODE with 33% data and forecasting on remaining 67% 
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/d755a614-c938-4375-b0c4-cf4ea0d9895a">
+
 
 
 
