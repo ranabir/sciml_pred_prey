@@ -197,7 +197,8 @@ The UDE model is trained on lesser data (% of original time plan) and forecasted
 ##### Whereas in case of UDE for the same 0.35% training data, the model is able to capture the underlying data very well
 
 ### Case: Training Neural ODE with 35% data and forecasting on remaining 65% 
-<img width="500" alt="forecast ude 0 35 trial 2" src="https://github.com/user-attachments/assets/797b7131-3ba7-49cc-9988-8a22fc72f634">
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/b2a7a93e-d9b7-4670-b9b7-d442c2a57289">
+
 
 In addition to it, we observed the UDE trains well with even shallower neural network of 5 neurons of 3 layers whereas for Neural ODE for the same data point we used 100 neurons and 5 layers
 
