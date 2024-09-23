@@ -2,14 +2,12 @@ using JLD, Lux, DiffEqFlux, DifferentialEquations, Optimization, OptimizationOpt
 using ComponentArrays, OptimizationOptimisers
 
 # Generated data using the Lotka-Volterra Predator-Prey Model
-
 α = 1.5
 β = 1.0
 γ = 0.5
 δ = 2.0
 
 u0 = [1.0, 1.0]  # Initial conditions [Prey, Predators]
-
 tspan = (0.0, 10.0)  # Time span
 datasize = 101
 t = range(tspan[1], tspan[2], length=datasize)
@@ -34,17 +32,15 @@ rng = Random.default_rng()
 Random.seed!(1028)
 
 NN1 = Lux.Chain(
-    Lux.Dense(2, 10, relu),
-    Lux.Dense(10, 10, relu),
-    Lux.Dense(10, 10, relu),
-    Lux.Dense(10, 1)
+    Lux.Dense(2, 5, relu),
+    Lux.Dense(5, 5, relu),
+    Lux.Dense(5, 1)
 )
 
 NN2 = Lux.Chain(
-    Lux.Dense(2, 10, relu),
-    Lux.Dense(10, 10, relu),
-    Lux.Dense(10, 10, relu),
-    Lux.Dense(10, 1)
+    Lux.Dense(2, 5, relu),
+    Lux.Dense(5, 5, relu),
+    Lux.Dense(5, 1)
 )
 
 # Initialize neural network parameters
@@ -100,12 +96,11 @@ function callback(θ, l, pred, iteration, opt_method; doplot=true)
     return false  # Continue the optimization
 end
 
-
 # Initialize the previous_loss variable
 previous_loss = Ref(Inf)
 
 # RMSProp optimizer setup
-η = 0.001   # Learning rate
+η = 0.0001   # Learning rate
 ρ = 0.9     # Momentum
 ϵ = 1e-8    # Epsilon to avoid division by zero
 centred = false  # Whether to use centered RMSProp
@@ -137,33 +132,21 @@ function train_and_forecast_with_ratio(train_ratio)
         callback(p, l, pred, iteration[], "Adam")
     end, maxiters=20000)
 
-    
     optprob_rmsprop = Optimization.OptimizationProblem(optf, ComponentArray(res_adam.minimizer))
 
     # Optimization run using RMSProp optimizer
     iteration[]=0
     
-
     res_rmsprop = Optimization.solve(optprob_rmsprop, OptimizationOptimisers.RMSProp(η, ρ, ϵ; centred=centred), callback = (p, l) -> begin
         iteration[] += 1
         pred = predict_ude(p, t_train_partial)
         callback(p, l, pred, iteration[], "RMSProp")
     end, maxiters=10000)
 
-
-    #=
-    # Run the BFGS optimization - 2
-    optprob3 = Optimization.OptimizationProblem(optf, ComponentArray(res2.minimizer))
-
-    #iteration[] = 0  # Reset the iteration counter
-    res3 = Optimization.solve(optprob3, Optim.BFGS(initial_stepnorm=0.1), callback = (p, l) -> begin
-        iteration[] += 1
-        callback(p, l, predict_ude(p), iteration=iteration[], opt_method="BFGS")
-    end, maxiters=100)
-    =#
     # Forecasting data (remaining)
+    last_point_train = predict_ude(res_adam.minimizer, t_train_partial)[:, end]  # Using last point of training as initial condition for forecasting
     t_forecast_partial = t[n_train:end]
-    prob_forecast_partial = ODEProblem{true}(ude_system!, u0, (t_train_partial[end], tspan[2]))
+    prob_forecast_partial = ODEProblem{true}(ude_system!, last_point_train, (t_train_partial[end], tspan[2]))
 
     # Forecast for the remaining time span using the trained UDE
     forecasted_sol = Array(solve(prob_forecast_partial, Tsit5(), p=res_rmsprop.minimizer, saveat=t_forecast_partial))
@@ -187,12 +170,13 @@ function train_and_forecast_with_ratio(train_ratio)
     plot!(plt, t_forecast_partial, Prey_Data[n_train:end], ribbon=forecast_deviation_prey, fillalpha=0.1, color=:red ,label=false)
     plot!(plt, t_forecast_partial, Predator_Data[n_train:end], ribbon=forecast_deviation_predator, fillalpha=0.1, color=:blue , label=false)
     
-    # Displaying the Finalplot
+    # Displaying the final plot
     display(plt)
 end
 
-# Forecasting and finding Breakdown-Point with `train_and_forecast_with_ratio` for different training ratios :
- train_and_forecast_with_ratio(0.9)
- train_and_forecast_with_ratio(0.7)
- train_and_forecast_with_ratio(0.5)
- train_and_forecast_with_ratio(0.3)
+# Forecasting and finding Breakdown-Point with `train_and_forecast_with_ratio` for different training ratios:
+#train_and_forecast_with_ratio(0.9)
+#train_and_forecast_with_ratio(0.7)
+#train_and_forecast_with_ratio(0.5)
+train_and_forecast_with_ratio(0.35)
+#train_and_forecast_with_ratio(0.3)
