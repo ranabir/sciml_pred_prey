@@ -191,22 +191,20 @@ The model accurately predicts the oscillations in prey and predator populations,
 
 ### Forecasting 
 The UDE model is trained on lesser data (% of original time plan) and forecasted on remaining part to find the forecasting breakdown point 
+From the above Neural ODE model we found that the forecast breakdown point was 0.35 % of training data and the forecast was completely wrong 
+Whereas in case of UDE for the same 0.35% training data, the model is able to capture the underlying data very well 
 
-### Case 1: Training Neural ODE with 90% data and forecasting on remaining 10% 
+### Case: Training Neural ODE with 35% data and forecasting on remaining 65% 
+<img width="500" alt="forecast ude 0 35 trial 2" src="https://github.com/user-attachments/assets/797b7131-3ba7-49cc-9988-8a22fc72f634">
 
-<img width="500" alt="forecast ude 0 9" src="https://github.com/user-attachments/assets/198aefc2-c9f1-45ec-903a-43cf3b4f3b05">
+In addition to it, we observed the UDE trains well with even shallower neural network of 5 neurons of 3 layers whereas for Neural ODE for the same data point we used 100 neurons and 5 layers
 
-### Case 2: Training Neural ODE with 70% data and forecasting on remaining 30% 
+We went ahead with 33% training data and found although it was able to capture the underlying data it started deviating 
 
-<img width="500" alt="forecast ude 0 7" src="https://github.com/user-attachments/assets/c0c5e2c7-fdae-4ddb-bda6-d05e299a76fe">
+### Case: Training Neural ODE with 33% data and forecasting on remaining 67% 
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/d755a614-c938-4375-b0c4-cf4ea0d9895a">
 
-### Case 3: Training Neural ODE with 50% data and forecasting on remaining 50% 
 
-<img width="500" alt="forecast ude 0 5" src="https://github.com/user-attachments/assets/e71054cc-a6cb-4fc7-b6a1-93bd2abeb510">
-
-### Case 3: Training Neural ODE with 30% data and forecasting on remaining 70% 
-
-<img width="500" alt="forecast ude 0 3" src="https://github.com/user-attachments/assets/4a59d287-1123-42b9-a773-65b551686a8a">
 
 
 
