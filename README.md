@@ -217,5 +217,6 @@ We went ahead with 33% training data and found although it was able to capture t
 
 
 ### Breakdown Edge Case 3 (Complete Breakdown): Training Neural ODE with 30% data and forecasting on remaining 70% 
-<img width="500" alt="forecast ude 0 3 trial 2" src="https://github.com/user-attachments/assets/1adf7431-9fb2-4b4c-9594-095909b2e3fb">
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/dab113c8-d2f0-434f-b4dc-32818859ebb6">
+
 
