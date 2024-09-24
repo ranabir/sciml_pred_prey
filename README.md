@@ -206,17 +206,14 @@ In addition to it, we observed the UDE trains well with even shallower neural ne
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/28e5d59c-e03a-417c-9557-263cae14347d">
 
 
-We went ahead with 33% training data and found although it was able to capture the underlying data it started deviating 
-
-### Breakdown Edge Case 1: Training Neural ODE with 33% data and forecasting on remaining 67% 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/d755a614-c938-4375-b0c4-cf4ea0d9895a">
+We went ahead with 31% training data and found although it was able to capture the underlying data it started deviating 
 
 
-### Breakdown Edge Case 2 (Partial Breakdown): Training Neural ODE with 31% data and forecasting on remaining 69% 
+### Breakdown Edge Case 1 (Partial Breakdown): Training Neural ODE with 31% data and forecasting on remaining 69% 
 <img width="500" alt="forecast ude 0 31" src="https://github.com/user-attachments/assets/17440c87-a79d-45e1-bb0a-72511a95ae9c">
 
 
-### Breakdown Edge Case 3 (Complete Breakdown): Training Neural ODE with 30% data and forecasting on remaining 70% 
+### Breakdown Edge Case 2 (Complete Breakdown): Training Neural ODE with 30% data and forecasting on remaining 70% 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/dab113c8-d2f0-434f-b4dc-32818859ebb6">
 
 
