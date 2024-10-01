@@ -221,9 +221,12 @@ We went ahead with 31% training data and found although it was able to capture t
 
 
 ### Optimizers Plot
-How Loss differs with Optimizers along with iterations
+
+
+
 <img width="500" alt="switch_from_Adam_RMSProp" src="https://github.com/user-attachments/assets/6d225947-3fbb-44eb-ae15-6f8d50d5c1de">
 
+How Loss differs with Optimizers along with iterations
 
 
 ## Adding Gaussian Noise and Forecasting 
@@ -248,7 +251,7 @@ Forecast:
 ### With 0.3 sd Noise
 
 Data:
-<img width="312" alt="Gaussian Noise 0 3" src="https://github.com/user-attachments/assets/66e7d6ee-3108-4b76-b37f-9ad9778e74f5">
+<img width="500" alt="Gaussian Noise 0 3" src="https://github.com/user-attachments/assets/66e7d6ee-3108-4b76-b37f-9ad9778e74f5">
 
 Forecast: 
 <img width="500" alt="Gaussian Noise 0 3 forecast" src="https://github.com/user-attachments/assets/f03c2f80-ea9d-45a9-80cb-4d2814a1044e">
