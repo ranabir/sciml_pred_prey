@@ -234,26 +234,32 @@ How Loss differs with Optimizers along with iterations
 ### With 0.005 sd Noise 
 
 Data:
+
 <img width="500" alt="Gaussian Noise 0 05" src="https://github.com/user-attachments/assets/cfab78f3-f9f3-4679-8e15-0c6fb893bcc1">
 
 Forecast:
+
 <img width="500" alt="Gaussian Noise 0 05 forecast" src="https://github.com/user-attachments/assets/1343a9d3-29d1-43a3-8030-a26d9622c839">
 
 
 
 ### With 0.01 sd Noise
 Data:
+
 <img width="500" alt="Gaussian Noise 0 1 latest" src="https://github.com/user-attachments/assets/ac1bba70-1b3a-4c0b-ba12-59f3660bc633">
 
 Forecast: 
+
 <img width="500" alt="Gaussian Noise 0 1 forecast" src="https://github.com/user-attachments/assets/a2f52427-c7f3-456e-b534-74a4c371f239">
 
 ### With 0.3 sd Noise
 
 Data:
+
 <img width="500" alt="Gaussian Noise 0 3" src="https://github.com/user-attachments/assets/66e7d6ee-3108-4b76-b37f-9ad9778e74f5">
 
 Forecast: 
+
 <img width="500" alt="Gaussian Noise 0 3 forecast" src="https://github.com/user-attachments/assets/f03c2f80-ea9d-45a9-80cb-4d2814a1044e">
 
 
